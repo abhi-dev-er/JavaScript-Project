@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            min-height: 100vh;
+            background: linear-gradient(145deg, #07020e 50%, #1841bb 50%);
+            width: 100%;
+        }
+        #cal{
+            position: relative;
+        }
+        .cal-box{
+            position: absolute;
+            top: 50%;
+            margin-top: 100px;
+            left: 50%;
+            transform: translate(-50%);
+            height: 500px;
+            width: 350px;
+            background-color: #000000;
+            border: 2px solid grey;
+        }
+        #input-box{
+            width: 90%;
+            height: 65px;
+            margin-left: 20px;
+            margin-top: 20px;
+            background-color: #07020e;
+            color: #fff;
+            font-size: 30px;
+            outline: none;
+        }
+        .btn-container{
+            margin-left: 30px;
+            margin-top: 10px;
+        }
+        .btn-container button{
+           width: 65px;
+           height: 65px;
+           font-size: 25px;
+           background-color: #24054f;
+           color: #fff;
+           margin: 2px;
+           border: none;
+           cursor: pointer;
+           &:hover{
+            background-color: #fff;
+            color: #000000;
+           }
+        }
+        .btn{
+            padding: 0px 70px;
+        }
+    </style>
+</head>
+<body>
+    <div id="cal">
+     <div class="cal-box">
+     <input type="text" id="input-box" readonly>
+     <div class="btn-container">
+        <button  onclick="currValue = '';document.getElementById('input-box').value = currValue;">AC</button>
+        <button  onclick="currValue = currValue - currValue;document.getElementById('input-box').value = currValue;">DE</button>
+        <button  onclick="currValue = currValue + '.';document.getElementById('input-box').value = currValue;">.</button>
+        <button  onclick="currValue = currValue + '/';document.getElementById('input-box').value = currValue;">/</button>
+     </div>
+     <div class="btn-container">
+        <button  onclick="currValue = currValue + '7';document.getElementById('input-box').value = currValue;">7</button>
+        <button  onclick="currValue = currValue + '8';document.getElementById('input-box').value = currValue;">8</button>
+        <button  onclick="currValue = currValue + '9';document.getElementById('input-box').value = currValue;">9</button>
+        <button  onclick="currValue = currValue + '*';document.getElementById('input-box').value = currValue;">*</button>
+     </div>
+     <div class="btn-container">
+        <button  onclick="currValue = currValue + '4';document.getElementById('input-box').value = currValue;">4</button>
+        <button  onclick="currValue = currValue + '5';document.getElementById('input-box').value = currValue;">5</button>
+        <button  onclick="currValue = currValue + '6';document.getElementById('input-box').value = currValue;">6</button>
+        <button  onclick="currValue = currValue + '-';document.getElementById('input-box').value = currValue;">-</button>
+     </div>
+     <div class="btn-container">
+        <button onclick="currValue = currValue + '1';document.getElementById('input-box').value = currValue;">1</button>
+        <button onclick="currValue = currValue + '2';document.getElementById('input-box').value = currValue;">2</button>
+        <button onclick="currValue = currValue + '3';document.getElementById('input-box').value = currValue;">3</button>
+        <button  onclick="currValue = currValue + '+';document.getElementById('input-box').value = currValue;">+</button>
+     </div>
+     <div class="btn-container">
+        <button  onclick="currValue = currValue + '00';document.getElementById('input-box').value = currValue;">00</button>
+        <button  onclick="currValue = currValue + '0';document.getElementById('input-box').value = currValue;">0</button>
+        <button class="btn" onclick=" let res = eval(currValue); currValue = res;document.getElementById('input-box').value = currValue;">=</button>
+     </div>
+     </div>
+    </div>
+</body>
+<script>
+    let currValue = '';
+ 
+</script>
+</html>
